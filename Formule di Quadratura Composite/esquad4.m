@@ -1,0 +1,11 @@
+tol=1.e-3/2;
+a=0;
+b=7.601;
+maxf2=1.15;
+hmax=sqrt(tol/(b-a)*12/maxf2);
+M=fix((b-a)/hmax)+1;
+f=@(x)cos(x).^2.*exp(-x);
+x=linspace(a,b,M+1);
+y=f(x);
+integrale=trapz(x,y);
+errore=abs(0.6-integrale)
